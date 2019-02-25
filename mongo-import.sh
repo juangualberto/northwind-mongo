@@ -1,7 +1,8 @@
 for f in *.csv
 do
+    echo "Procesando... $f"
     filename=$(basename "$f")
     extension="${filename##*.}"
     filename="${filename%.*}"
-    mongoimport -d Northwind -c "$filename" --type csv --file "$f" --headerline
+    mongoimport -d northwind -c "$filename" --type csv --file "$f" --headerline
 done
